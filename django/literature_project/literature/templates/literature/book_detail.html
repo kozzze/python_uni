@@ -1,0 +1,16 @@
+<h1>{{ book.title }}</h1>
+<p>Автор: {{ book.author.name }}</p>
+<p>Дата публикации: {{ book.publication_date }}</p>
+<h2>Отзывы</h2>
+<ul>
+    {% for review in book.reviews.all %}
+        <li>
+            <p>{{ review.review_text }}</p>
+            <p>Рейтинг: {{ review.rating }}</p>
+            <p>Автор отзыва: {{ review.reviewer_name }}</p>
+        </li>
+    {% empty %}
+        <p>Отзывов пока нет.</p>
+    {% endfor %}
+</ul>
+<a href="/">Назад</a>

@@ -1,0 +1,7 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Формат даты: ДД.ММ.ГГГГ</p>
+    <button type="submit">Добавить</button>
+</form>
+<a href="/">Назад</a>
